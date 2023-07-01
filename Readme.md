@@ -1,13 +1,14 @@
-# Fun
+# Team 1: Concurrency   
+SE322 Software Design and Architecture Group Homework 1  
+Memo Count: 10  
 
-## Fun
+## Team members
+| Student ID | Name | Memo List |
+|------------|------|-----------|
+|642115003   |  Kan Katpark    | [s01-003](./memo/s01-003.md), [s02-003](./memo/s02-003.md), [s03-003](./memo/s03-003.md), [s04-003](./memo/s04-003.md), [s05-003](./memo/s05-003.md) |
+|642115046   |  Sarin Patanompee    | [s01-046](./memo/s01-046.md), [s02-046](./memo/s02-046.md), [s03-046](./memo/s03-046.md), [s04-046](./memo/s04-046.md), [s05-046](./memo/s05-046.md),        |
+|            |      |           |
 
-### Fun
 
-#### Fun
+Read to [Conclusion](./conclusion.md)
 
-##### Fun
-
-###### Yo's Branch
-
-![Sob](https://media.discordapp.net/attachments/862600196704829443/1118366377728806922/QQ20230614102831.gif?width=431&height=242)
