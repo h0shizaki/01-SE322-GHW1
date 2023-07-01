@@ -10,5 +10,5 @@ Memo Count: 10
 |            |      |           |
 
 
-Read to [Conclusion](./conclusion.md)
+Go to [Conclusion](./conclusion.md)
 
