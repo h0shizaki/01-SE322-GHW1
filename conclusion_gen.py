@@ -10,6 +10,7 @@ solutions = dict()
 decision_driver_links = dict()
 num_refs = 0
 participating_members = dict()
+urls = dict()
 for root, dirs, files in os.walk("./memo", topdown=False):
     for file in files:
         if file.endswith(".md"):
@@ -19,6 +20,12 @@ for root, dirs, files in os.walk("./memo", topdown=False):
             md_file = os.path.join(root, file).replace("\\", "/")
             with open(md_file, "r") as f:
                 content = f.read()
+                start = content.lower().find("## url") + 6
+                end = content.find("##", start)
+                lines = [x for x in content[start:end].strip().splitlines() if x]
+                for line in lines:
+                    line = line.strip()
+                    urls.setdefault(line, []).append(file)
                 start = content.lower().find("## problem") + 10
                 end = content.find("##", start)
                 start_with_dash = None
@@ -116,6 +123,10 @@ for root, dirs, files in os.walk("./memo", topdown=False):
                             (file, md_file)
                         )
 
+if num_refs != len(urls.keys()):
+    print("Duplicate found.")
+    for k, v in urls.items():
+        print(f"{len(v)}{v} - {k}")
 
 with open("conclusion.md", "w") as out_file:
     out_file.write(f"# Conclusion\n")
