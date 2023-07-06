@@ -84,6 +84,7 @@ for root, dirs, files in os.walk("./memo", topdown=False):
                             for x in content[sol_start:sol_end].splitlines()
                             if x.strip()
                         ]
+                        sol_start_with_dash = None
                         for sol in sol_lines:
                             sol = sol.replace("*", "")
                             sol_text = (
@@ -95,9 +96,16 @@ for root, dirs, files in os.walk("./memo", topdown=False):
                             if sol_text.endswith("."):
                                 sol_text = sol_text[:-1]
                             if sol_text.lower() != "n/a":
-                                solutions.setdefault(problem, []).append(
-                                    f"{sol_text}. ([{file[:-3]}]({md_file}))"
-                                )
+                                if sol_start_with_dash is None:
+                                    sol_start_with_dash = sol.startswith("-")
+                                if (
+                                    (sol_start_with_dash and sol.startswith("-"))
+                                    or (not sol_start_with_dash and sol[0].isdigit())
+                                    or len(sol_lines) == 1
+                                ):
+                                    solutions.setdefault(problem, []).append(
+                                        f"{sol_text}. ([{file[:-3]}]({md_file}))"
+                                    )
                         problem_num += 1
                     else:
                         continue
