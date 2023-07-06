@@ -33,9 +33,12 @@ for root, dirs, files in os.walk("./memo", topdown=False):
                         .strip()
                     )
                     if problem.endswith("."):
-                        problem = problem[:-1]
+                        problem = problem[:-1].strip()
                     if problem.lower().endswith("problem"):
-                        problem = problem[:-7].strip()
+                        problem = problem[:-7]
+                    elif problem.lower().endswith("problems"):
+                        problem = problem[:-8]
+                    problem = problem.strip()
                     if not problem.lower().endswith("ss") and problem.lower().endswith(
                         "s"
                     ):
