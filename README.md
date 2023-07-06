@@ -1,7 +1,6 @@
 # Team 1: Concurrency
 
 SE322 Software Design and Architecture Group Homework 1
-Memo Count: 40
 
 ## Team members
 
